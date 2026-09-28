@@ -1,0 +1,388 @@
+:root {
+  --bg: #08090d;
+  --panel: #11131a;
+  --line: #252936;
+  --text: #f5f7fb;
+  --muted: #8e96a8;
+  --red: #e53935;
+  --gold: #ffb52e;
+  --green: #35d07f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 80% 0,
+      #241015 0,
+      #08090d 35%
+    );
+
+  color: var(--text);
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.app {
+  max-width: 1400px;
+  margin: auto;
+  padding: 22px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand strong {
+  display: block;
+  letter-spacing: 0.08em;
+}
+
+.brand span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--red);
+
+  font-weight: 900;
+  font-size: 23px;
+}
+
+.status {
+  color: var(--green);
+  font-size: 12px;
+}
+
+.status i {
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  margin-right: 6px;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    1.25fr
+    0.75fr;
+
+  gap: 16px;
+}
+
+.panel {
+  background: rgba(17, 19, 26, 0.92);
+
+  border: 1px solid var(--line);
+
+  border-radius: 16px;
+
+  padding: 18px;
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero {
+  grid-column: 1 / -1;
+
+  padding: 30px;
+}
+
+.eyebrow {
+  color: var(--red);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 58px);
+
+  margin: 8px 0;
+}
+
+.hero h1 b {
+  color: var(--gold);
+}
+
+.hero p {
+  color: var(--muted);
+
+  max-width: 760px;
+
+  line-height: 1.6;
+}
+
+.goal {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+.goal input,
+.workspace textarea {
+  flex: 1;
+
+  background: #090a0f;
+
+  border: 1px solid var(--line);
+
+  color: var(--text);
+
+  border-radius: 10px;
+
+  padding: 13px;
+
+  outline: none;
+}
+
+.goal input:focus,
+.workspace textarea:focus {
+  border-color: var(--red);
+}
+
+button {
+  border: 0;
+
+  border-radius: 10px;
+
+  padding: 12px 16px;
+
+  background: var(--red);
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+.ghost {
+  background: #1a1d26;
+
+  color: #dfe3eb;
+
+  padding: 8px 11px;
+
+  margin-left: 7px;
+}
+
+.metrics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 10px;
+}
+
+.metrics div {
+  background: #0c0e14;
+
+  border: 1px solid var(--line);
+
+  border-radius: 12px;
+
+  padding: 14px;
+}
+
+.metrics span {
+  display: block;
+
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+.metrics strong {
+  font-size: 25px;
+}
+
+.panelhead {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.panel h2 {
+  font-size: 15px;
+
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+.live {
+  color: var(--green);
+
+  font-size: 11px;
+}
+
+.tasks,
+.activity {
+  margin-top: 14px;
+
+  display: grid;
+
+  gap: 8px;
+}
+
+.task,
+.event,
+.tool {
+  background: #0b0d12;
+
+  border: 1px solid var(--line);
+
+  border-radius: 10px;
+
+  padding: 12px;
+}
+
+.task {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.task input {
+  accent-color: var(--red);
+}
+
+.task small {
+  margin-left: auto;
+
+  color: var(--muted);
+}
+
+.event {
+  font-size: 12px;
+
+  color: #cdd2dc;
+}
+
+.event b {
+  color: var(--red);
+}
+
+.toolgrid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 8px;
+
+  margin-top: 14px;
+}
+
+.tool strong {
+  display: block;
+}
+
+.tool span {
+  color: var(--muted);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.workspace textarea {
+  width: 100%;
+
+  min-height: 180px;
+
+  resize: vertical;
+
+  margin-top: 14px;
+}
+
+.workspace .ghost:first-child {
+  margin-left: 0;
+}
+
+footer {
+  text-align: center;
+
+  color: #626a79;
+
+  font-size: 11px;
+
+  padding: 18px;
+}
+
+@media (max-width: 800px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .goal {
+    flex-direction: column;
+  }
+
+  .hero {
+    grid-column: auto;
+  }
+}
